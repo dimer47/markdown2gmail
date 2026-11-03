@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Markdown2Gmail",
+  "version": "1.0.0",
+  "description": "Colle du Markdown dans un mail Gmail, mis en forme comme un texte saisi dans Gmail.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "marked.min.js",
+        "convert.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "icons": {
+    "128": "icons/icon-192.png"
+  }
+}
