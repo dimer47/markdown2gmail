@@ -1,4 +1,4 @@
-.gmd-btn{position:fixed;z-index:2147483646;display:none;padding:2px 8px;border:1px solid #c4c7c5;border-radius:6px;background:#fff;color:#1a73e8;font:bold 12px Arial,sans-serif;cursor:pointer;opacity:.85}
+.gmd-btn{position:fixed;z-index:2147483646;display:none;height:32px;width:36px;padding:0;border:1px solid #c4c7c5;border-radius:6px;background:#fff;color:#1a73e8;font:bold 12px Arial,sans-serif;cursor:pointer;opacity:.85}
 .gmd-btn:hover{opacity:1;background:#e8f0fe}
 .gmd-ov{position:fixed;inset:0;z-index:2147483647;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center}
 .gmd-box{background:#fff;border-radius:12px;padding:16px;width:min(640px,92vw);box-shadow:0 8px 30px rgba(0,0,0,.25);font:14px Arial,sans-serif;color:#202124}

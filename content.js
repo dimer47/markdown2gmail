@@ -10,7 +10,7 @@
   function placeBtn() {
     if (!editor || !document.contains(editor)) { btn.style.display = 'none'; return; }
     const r = editor.getBoundingClientRect();
-    btn.style.display = 'block'; btn.style.top = (r.top + 4) + 'px'; btn.style.left = (r.right - 44) + 'px';
+    btn.style.display = 'block'; btn.style.top = (r.top + 4) + 'px'; btn.style.left = (r.right - 82) + 'px'; // à gauche du bouton Plume IA (right - 38, 32 px)
   }
   document.addEventListener('focusin', e => { const ed = isEditor(e.target); if (ed) { editor = ed; placeBtn(); } }, true);
   document.addEventListener('selectionchange', saveRange);
