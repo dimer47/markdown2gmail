@@ -7,10 +7,24 @@
 
   const isEditor = el => el && el.closest && el.closest('[g_editable="true"][contenteditable="true"]');
   function saveRange() { const s = getSelection(); if (s.rangeCount && editor && editor.contains(s.anchorNode)) range = s.getRangeAt(0).cloneRange(); }
+  // Zone visible = zone de texte limitée par ses conteneurs qui défilent
+  function visibleRect(el) {
+    let r = el.getBoundingClientRect(), top = r.top, right = r.right, bottom = r.bottom;
+    for (let p = el.parentElement; p && p !== document.body; p = p.parentElement) {
+      const cs = getComputedStyle(p);
+      if (/(auto|scroll|hidden)/.test(cs.overflowY + cs.overflowX)) {
+        const pr = p.getBoundingClientRect();
+        top = Math.max(top, pr.top); bottom = Math.min(bottom, pr.bottom); right = Math.min(right, pr.right);
+      }
+    }
+    return { top, right, bottom };
+  }
   function placeBtn() {
     if (!editor || !document.contains(editor)) { btn.style.display = 'none'; return; }
-    const r = editor.getBoundingClientRect();
-    btn.style.display = 'block'; btn.style.top = (r.top + 4) + 'px'; btn.style.left = (r.right - 82) + 'px'; // à gauche du bouton Plume IA (right - 38, 32 px)
+    const r = visibleRect(editor);
+    if (r.bottom - r.top < 40) { btn.style.display = 'none'; return; }
+    // en haut de la partie visible, à gauche du bouton Plume IA (right - 38, 32 px)
+    btn.style.display = 'block'; btn.style.top = (r.top + 4) + 'px'; btn.style.left = (r.right - 82) + 'px';
   }
   document.addEventListener('focusin', e => { const ed = isEditor(e.target); if (ed) { editor = ed; placeBtn(); } }, true);
   document.addEventListener('selectionchange', saveRange);
