@@ -57,3 +57,17 @@ Aucune donnée n'est envoyée : la conversion se fait entièrement dans le navig
 ## Compatibilité
 
 Le bouton MD se place à gauche du bouton de l'extension [Plume AI](https://github.com/dimer47/plume-ai-chrome-extension) quand les deux sont installées.
+
+## Licence
+
+Markdown2Gmail est publié sous licence [PolyForm Noncommercial 1.0.0](LICENSE.md).
+
+- Usage personnel, associatif, éducatif ou de recherche : libre et gratuit
+- Modification et partage : autorisés, hors usage commercial
+- Usage commercial (entreprise, revente, intégration dans un produit payant) : licence commerciale obligatoire
+
+Pour une licence commerciale : iachi.dimitri@gmail.com
+
+## Contribuer
+
+Les contributions sont les bienvenues : voir [CONTRIBUTING.md](CONTRIBUTING.md).
