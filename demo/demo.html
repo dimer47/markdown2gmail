@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Démo Markdown2Gmail</title>
+<!-- Page de démonstration : fausse fenêtre de rédaction, charge le vrai code de l'extension -->
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; background: #f6f8fc; color: #202124; }
+  .bar { height: 64px; display: flex; align-items: center; padding: 0 24px; gap: 16px; background: #f6f8fc; }
+  .logo { font-size: 22px; color: #5f6368; }
+  .search { flex: 1; max-width: 720px; height: 46px; border-radius: 24px; background: #e9eef6; }
+  .compose { position: fixed; right: 64px; bottom: 0; width: 620px; height: 640px; background: #fff;
+    border-radius: 12px 12px 0 0; box-shadow: 0 8px 24px rgba(0,0,0,.2); display: flex; flex-direction: column; }
+  .chead { background: #f2f6fc; padding: 12px 16px; border-radius: 12px 12px 0 0; font-size: 14px; font-weight: bold; }
+  .field { padding: 10px 16px; border-bottom: 1px solid #f1f3f4; font-size: 14px; color: #5f6368; }
+  .field b { color: #202124; font-weight: normal; }
+  .scroll { flex: 1; overflow: auto; }
+  .ed { padding: 12px 16px; min-height: 400px; font-size: small; outline: none; }
+  .gmail_quote { color: #5f6368; border-left: 1px solid #ccc; padding-left: 10px; margin-top: 16px; }
+  .send { margin: 12px 16px; align-self: flex-start; background: #0b57d0; color: #fff; border-radius: 18px; padding: 9px 24px; font-size: 14px; }
+</style>
+<script src="../marked.min.js"></script>
+<script src="../convert.js"></script>
+<link rel="stylesheet" href="../content.css">
+</head>
+<body>
+  <div class="bar"><span class="logo">Messagerie</span><div class="search"></div></div>
+  <div class="compose">
+    <div class="chead">Re: Planning de la semaine</div>
+    <div class="field">À <b>Équipe Atelier Lumen</b></div>
+    <div class="field">Objet <b>Re: Planning de la semaine</b></div>
+    <div class="scroll">
+      <div class="ed" g_editable="true" contenteditable="true" id="ed"><div><br></div>
+        <div>Thomas</div>
+        <div class="gmail_quote">Le lun. 4 nov. 2026, Claire Moreau a écrit :<br>Bonjour, pouvez-vous m'envoyer le planning de la semaine ?</div>
+      </div>
+    </div>
+    <div class="send">Envoyer</div>
+  </div>
+  <script src="../content.js"></script>
+</body>
+</html>
